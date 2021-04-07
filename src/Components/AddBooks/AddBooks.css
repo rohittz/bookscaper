@@ -1,11 +1,9 @@
 .addbooks-form {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     row-gap: 10px;
     column-gap: 10px;
     align-items: center;
-    width: 80%;
     padding: 20px 5px;
 }
 
@@ -17,13 +15,13 @@
 }
 
 .addbooks-container {
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .form-book-input>div {
     justify-content: flex-start;
     align-items: flex-start;
-    width: 70%;
+    width: 100%;
 }
 
 input {
@@ -52,7 +50,79 @@ input::placeholder {
 
 .submit-input {
     background-color: var(--color-dark-green);
+    transition: 0.2s all ease;
+    font-size: 14px;
     color: var(--main-txt-color);
-    border: 0px;
+    border: 2px solid transparent;
     width: 100px;
+}
+
+.submit-input:hover {
+    border-color: var(--color-light-green);
+    color: var(--color-light-green);
+    background-color: transparent;
+}
+
+.submit-input:active {
+    transform: scale(1.2);
+}
+
+/* extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px) {
+    .addbooks-form {
+        grid-template-columns: repeat(1, 1fr);
+        width: 90%;
+    }
+    .submit {
+        grid-column: 1/2;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-width: 600px) {
+    .addbooks-form {
+        grid-template-columns: repeat(1, 1fr);
+        width: 85%;
+    }
+    .submit {
+        grid-column: 1/2;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 768px) {
+    .addbooks-form {
+        grid-template-columns: repeat(2, 1fr);
+        width: 70%;
+    }
+    .submit {
+        grid-column: 1/3;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media only screen and (min-width: 992px) {
+    .addbooks-form {
+        grid-template-columns: repeat(2, 1fr);
+        width: 80%;
+    }
+    .submit {
+        grid-column: 1/2;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1200px) {
+    .addbooks-form {
+        grid-template-columns: repeat(2, 1fr);
+        width: 70%;
+    }
+    .submit {
+        grid-column: 1/2;
+    }
 }

@@ -73,9 +73,11 @@
     animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
     animation-iteration-count: 1;
     background-color: var(--color-dark-gray);
-    border-radius: 50%;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
+    width: 30px;
+}
+
+.showIcon:hover {
+    background-color: var(--color-dark-green);
 }
 
 .maintab-admin {
@@ -96,13 +98,20 @@
 @media only screen and (max-width: 600px) {
     .showIcon {
         display: block;
+        order: 0;
+        position: -webkit-sticky;
+        top: 0;
     }
     .sidebar-admin {
         display: none;
-        width: 600px;
+        width: 100%;
+        order: 1;
     }
-    .adminbooks-form {
-        grid-template-columns: repeat(1, 1fr);
+    .maintab-admin {
+        order: 2;
+    }
+    .admin-container {
+        flex-flow: column;
     }
 }
 
@@ -114,9 +123,7 @@
     }
     .sidebar-admin {
         display: none;
-    }
-    .adminbooks-form {
-        grid-template-columns: repeat(1, 1fr);
+        grid-row: 1/2;
     }
 }
 
@@ -128,9 +135,7 @@
     }
     .sidebar-admin {
         display: none;
-    }
-    .adminbooks-form {
-        grid-template-columns: repeat(2, 1fr);
+        grid-row: 1/2;
     }
 }
 
@@ -143,9 +148,6 @@
     .sidebar-admin {
         display: flex!important;
     }
-    .adminbooks-form {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -156,8 +158,5 @@
     }
     .sidebar-admin {
         display: flex!important;
-    }
-    .adminbooks-form {
-        grid-template-columns: repeat(2, 1fr);
     }
 }
