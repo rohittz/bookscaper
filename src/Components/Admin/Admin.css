@@ -1,0 +1,45 @@
+.admin-container {
+    display: grid;
+    grid-template-columns: 15% 80%;
+    min-height: 100vh;
+    color: var(--main-txt-color);
+    font-size: 18px;
+}
+
+.sidebar-admin, .option-admin, .icon-container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.option-icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.sidebar-admin {
+    justify-content: flex-start;
+    align-items: stretch;
+    background-color: var(--color-dark-green);
+}
+
+.option-admin {
+    transition: 0.2s all ease;
+    flex-flow: row;
+    padding: 15px 0px;
+    padding-left: 20px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.icon-container {
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+}
+
+.option-admin:hover {
+    background-color: var(--color-light-green);
+    cursor: pointer;
+    color: var(--main-back-color);
+}
