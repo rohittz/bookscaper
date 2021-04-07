@@ -34,7 +34,7 @@ const Header = () => {
         setCurrComp("/orders");
     }
     const goToAdmin = () => {
-        savedPaths.push("/admin");
+        savedPaths.push("/admin/managebooks");
         setCurrComp("/admin");
     }
     return (

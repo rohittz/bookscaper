@@ -1,0 +1,58 @@
+.addbooks-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    row-gap: 10px;
+    column-gap: 10px;
+    align-items: center;
+    width: 80%;
+    padding: 20px 5px;
+}
+
+.form-book-input, .form-book-input>div, .addbooks-container {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.addbooks-container {
+    margin-top: 50px;
+}
+
+.form-book-input>div {
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 70%;
+}
+
+input {
+    background-color: transparent;
+    border: 2px solid gray;
+    height: 30px;
+    color: var(--main-txt-color);
+    width: 80%;
+    padding-left: 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+input::placeholder {
+    color: var(--color-light-gray);
+}
+
+.submit {
+    margin-top: 40px;
+    grid-column: 2/3;
+}
+
+.custom-upload {
+    padding: 0px;
+}
+
+.submit-input {
+    background-color: var(--color-dark-green);
+    color: var(--main-txt-color);
+    border: 0px;
+    width: 100px;
+}

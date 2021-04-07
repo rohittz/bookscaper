@@ -1,12 +1,12 @@
 .admin-container {
-    display: grid;
-    grid-template-columns: 15% 80%;
+    display: flex;
+    flex-flow: row;
     min-height: 100vh;
     color: var(--main-txt-color);
-    font-size: 18px;
+    font-size: 16px;
 }
 
-.sidebar-admin, .option-admin, .icon-container {
+.sidebar-admin, .option-admin, .icon-container, .showIcon {
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -18,15 +18,31 @@
 }
 
 .sidebar-admin {
+    width: 300px;
     justify-content: flex-start;
     align-items: stretch;
-    background-color: var(--color-dark-green);
+    animation-name: slide;
+    animation-duration: 0.3s;
+    animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    animation-iteration-count: 1;
+    background-color: var(--color-dark-gray);
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
 }
 
 .option-admin {
     transition: 0.2s all ease;
     flex-flow: row;
-    padding: 15px 0px;
+    padding: 10px 0px;
     padding-left: 20px;
     justify-content: flex-start;
     align-items: center;
@@ -39,7 +55,109 @@
 }
 
 .option-admin:hover {
-    background-color: var(--color-light-green);
     cursor: pointer;
-    color: var(--main-back-color);
+    color: var(--color-light-green);
+}
+
+.showIcon {
+    padding: 3px;
+    justify-content: center;
+    cursor: pointer;
+    height: min-content;
+    position: -webkit-sticky;
+    position: sticky;
+    transition: 0.3s all ease;
+    top: 0;
+    animation-name: slide;
+    animation-duration: 0.6s;
+    animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    animation-iteration-count: 1;
+    background-color: var(--color-dark-gray);
+    border-radius: 50%;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.maintab-admin {
+    width: 100%;
+}
+
+.markad {
+    background-color: black;
+    color: var(--color-light-green);
+}
+
+.nomarkad {
+    background-color: transparent;
+}
+
+/* extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px) {
+    .showIcon {
+        display: block;
+    }
+    .sidebar-admin {
+        display: none;
+        width: 600px;
+    }
+    .adminbooks-form {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-width: 600px) {
+    .showIcon {
+        display: block;
+    }
+    .sidebar-admin {
+        display: none;
+    }
+    .adminbooks-form {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 768px) {
+    .showIcon {
+        display: block;
+    }
+    .sidebar-admin {
+        display: none;
+    }
+    .adminbooks-form {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media only screen and (min-width: 992px) {
+    .showIcon {
+        display: none;
+    }
+    .sidebar-admin {
+        display: flex!important;
+    }
+    .adminbooks-form {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1200px) {
+    .showIcon {
+        display: none;
+    }
+    .sidebar-admin {
+        display: flex!important;
+    }
+    .adminbooks-form {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

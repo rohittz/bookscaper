@@ -5,11 +5,12 @@
     justify-content: center;
     column-gap: 70px;
     min-height: 90vh;
+    margin-bottom: 50px;
     align-items: center;
 }
 
 .login {
-    padding: 30px 5px;
+    padding: 45px 5px;
     background-color: var(--color-dark-gray);
     border-radius: 10px;
     backdrop-filter: blur(4px);
@@ -197,6 +198,10 @@ input:focus {
 .inputbox, .login-third {
     width: 80%;
     transition: 0.2s all ease;
+}
+
+.login-third {
+    width: 90%;
 }
 
 .login-third:hover>.third-text {
