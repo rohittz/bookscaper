@@ -1,0 +1,15 @@
+.book-card {
+    border: 1px solid gray;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    height: 600px;
+}
+
+.book-cover {
+    height: 400px;
+    margin-top: 20px;
+    border: 1px solid gray;
+    width: 90%;
+}

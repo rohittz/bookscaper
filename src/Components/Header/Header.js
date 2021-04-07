@@ -64,7 +64,7 @@ const Header = () => {
                 {
                     loggedInUser?.isSignedIn &&
                     <div className="user-photo">
-                        <img src={loggedInUser.photo} alt={loggedInUser.name} />
+                        <img src={loggedInUser?.photo} alt={loggedInUser.name} />
                     </div>
                 }
             </div>
