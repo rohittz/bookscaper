@@ -13,6 +13,7 @@ import Admin from './Components/Admin/Admin';
 import Privateroute from './Components/PrivateRoute/Privateroute';
 import Orders from './Components/Orders/Orders';
 import Home from './Components/Home/Home';
+import Checkout from './Components/Checkout/Checkout';
 export const userContext = createContext();
 export const historyContext = createContext();
 function App() {
@@ -40,6 +41,9 @@ function App() {
                 <Route path='/login'>
                   <Login></Login>
                 </Route>
+                <Privateroute path='/checkout'>
+                  <Checkout></Checkout>
+                </Privateroute>
                 <Privateroute path='/admin'>
                   <Admin></Admin>
                 </Privateroute>

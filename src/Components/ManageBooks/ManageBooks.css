@@ -1,0 +1,17 @@
+.managebooks-container {
+    padding: 50px 20px;
+}
+
+.delete {
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: 0.3s all ease;
+}
+
+.delete:hover {
+    border: 1px solid var(--color-light-green);
+}
+
+.delete:active {
+    background-color: var(--color-light-gray);
+}

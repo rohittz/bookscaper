@@ -1,0 +1,61 @@
+.checkout-container {
+    min-height: 100vh;
+    display: flex;
+    color: var(--main-txt-color);
+    flex-flow: column nowrap;
+    padding: 40px 20px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.checkout-inner {
+    display: flex;
+    flex-flow: row wrap;
+    row-gap: 30px;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
+}
+
+.check-cover {
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 290px;
+}
+
+.no-book {
+    border: 2px solid var(--color-light-green);
+    padding: 10px 20px;
+    color: var(--color-light-green);
+}
+
+.check-info {
+    display: flex;
+    row-gap: 10px;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.checkout-button button {
+    border: 0px;
+    background-color: var(--color-dark-green);
+    padding: 7px 20px;
+    color: var(--main-txt-color);
+    font-size: 17px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: 0.3s all ease;
+    font-weight: bold;
+}
+
+.checkout-button button:active {
+    transform: scale(1.1);
+}
+
+.checkout-button button:hover {
+    border: 2px solid var(--color-light-green);
+    background-color: transparent;
+}

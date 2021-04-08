@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { useHistory } from 'react-router';
+import { historyContext } from '../../App';
 import './BookCard.css';
 
 const BookCard = (props) => {
+    const [currComp, setCurrComp] = useContext(historyContext);
+    let history = useHistory();
     const { bookName, authorName, price, cover } = props.details;
+    const goToCheckout = (bookName, authorName, price, cover) => {
+        const checkedBook = { bookName, authorName, price, cover };
+        history.push({
+            pathname: '/checkout',
+            state: { book: checkedBook }
+        });
+        setCurrComp('/checkout');
+    }
     return (
         <div className="book-card">
             <div style={{ 'backgroundImage': `url(${cover})` }} className="book-cover">
@@ -21,7 +33,7 @@ const BookCard = (props) => {
                         <div className="price">
                             ${price}
                         </div>
-                        <button className="buynow"> Buy Now</button>
+                        <button onClick={() => goToCheckout(bookName, authorName, price, cover)} className="buynow"> Buy Now</button>
                     </div>
                 </div>
             </div>

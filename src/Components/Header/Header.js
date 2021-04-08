@@ -22,7 +22,15 @@ const Header = () => {
     }
     // handle goToLogin button
     const goToLogin = (event) => {
-        savedPaths.push("/login");
+        if (loggedInUser?.isSignedIn) {
+            savedPaths.push({
+                pathname: '/checkout',
+                state: { book: null }
+            });
+        }
+        else {
+            savedPaths.push("/login");
+        }
         setCurrComp("/login");
     }
     const goToHome = () => {
@@ -58,7 +66,7 @@ const Header = () => {
 
                         <div className="menu-item">Deals</div>
 
-                        <div className={`menu-item ${currComp === "/login" ? "mark" : "nomark"}`} onClick={goToLogin}>{loggedInUser?.isSignedIn ? loggedInUser.name : "Login"}</div>
+                        <div className={`menu-item ${currComp === "/login" || currComp === "/checkout" ? "mark" : "nomark"}`} onClick={goToLogin}>{loggedInUser?.isSignedIn ? "Checkout" : "Login"}</div>
                     </div>
                 </div>
                 {
