@@ -5,7 +5,7 @@ const BookCard = (props) => {
     const { bookName, authorName, price, cover } = props.details;
     return (
         <div className="book-card">
-            <div className="book-cover">
+            <div style={{ 'backgroundImage': `url(${cover})` }} className="book-cover">
             </div>
             <div className="about-book">
                 <div className="names">
@@ -17,13 +17,14 @@ const BookCard = (props) => {
                     </div>
                 </div>
                 <div className="price-buy">
-                    <div className="price">
-                        {price}
+                    <div>
+                        <div className="price">
+                            ${price}
+                        </div>
+                        <button className="buynow"> Buy Now</button>
                     </div>
-                    <button> Buy Now</button>
                 </div>
             </div>
-            {bookName}
         </div>
     );
 };

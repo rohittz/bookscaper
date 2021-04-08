@@ -1,15 +1,111 @@
 .book-card {
-    border: 1px solid gray;
+    display: flex;
+    border: 2px solid var(--color-dark-green);
+    color: var(--main-txt-color);
+    width: 280px;
+    height: 448px;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.book-cover {
+    width: 150px;
+    background-position: center;
+    background-size: 100% 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: 225px;
+}
+
+.names, .about-book, .price-buy, .buynow, .price-buy>div {
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: center;
-    height: 600px;
 }
 
-.book-cover {
-    height: 400px;
-    margin-top: 20px;
-    border: 1px solid gray;
-    width: 90%;
+.names {
+    align-items: flex-start;
+    row-gap: 5px;
+    padding-left: 5px;
+    width: 275px;
+}
+
+.book-name {
+    font-size: 19px;
+    text-align: left;
+    color: var(--color-light-green);
+}
+
+.author-name {
+    color: var(--color-dark-green);
+}
+
+.about-book {
+    width: 100%;
+    height: 163px;
+}
+
+.price-buy {
+    flex-flow: row nowrap;
+    width: 100%;
+    padding-bottom: 15px;
+    height: 100%;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.price-buy>div {
+    /* flex-flow: row nowrap; */
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    width: 100%;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.price {
+    font-size: 22px;
+    color: var(--color-light-green);
+    font-weight: bold;
+}
+
+.buynow {
+    background-color: var(--color-light-green);
+    padding: 8px 20px;
+    border: 0px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+    .book-card {
+        width: 210px;
+        height: 310px;
+    }
+    .book-cover {
+        width: 135px;
+        height: 172.5px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    .names {
+        width: 195px;
+    }
+    .about-book {
+        height: 107.5px;
+        font-size: 15px;
+    }
+    .book-name {
+        font-size: 16px;
+    }
+    .buynow {
+        padding: 6px 15px;
+        font-size: 16px;
+    }
+    .price {
+        font-size: 18px;
+    }
 }

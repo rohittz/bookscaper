@@ -1,17 +1,16 @@
 .books-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-flow: row wrap;
+    row-gap: 10px;
     justify-content: center;
-    align-items: center;
-    row-gap: 40px;
-    column-gap: 40px;
+    column-gap: 10px;
 }
 
 /* extra small devices (phones, 600px and down) */
 
 @media only screen and (max-width: 600px) {
     .books-container {
-        padding: 100px 50px;
+        padding: 50px 10px;
     }
 }
 
@@ -19,7 +18,7 @@
 
 @media only screen and (min-width: 600px) {
     .books-container {
-        padding: 100px 50px;
+        padding: 50px 10px;
     }
 }
 
@@ -27,7 +26,7 @@
 
 @media only screen and (min-width: 768px) {
     .books-container {
-        padding: 100px 50px;
+        padding: 50px 10px;
     }
 }
 
@@ -35,7 +34,7 @@
 
 @media only screen and (min-width: 992px) {
     .books-container {
-        padding: 50px 150px;
+        padding: 50px 10px;
     }
 }
 
@@ -43,6 +42,6 @@
 
 @media only screen and (min-width: 1200px) {
     .books-container {
-        padding: 50px 150px;
+        padding: 50px 50px;
     }
 }

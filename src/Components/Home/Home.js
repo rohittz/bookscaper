@@ -5,7 +5,7 @@ import './Home.css'
 const Home = () => {
     const [allBooos, setAllBooks] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:3005/allbooks')
+        fetch('https://bookscape-server.herokuapp.com/allbooks')
             .then(res => res.json())
             .then(data => {
                 setAllBooks(data);

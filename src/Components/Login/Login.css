@@ -1,6 +1,5 @@
 .login-container {
     display: flex;
-    margin-top: 40px;
     row-gap: 30px;
     justify-content: center;
     column-gap: 70px;

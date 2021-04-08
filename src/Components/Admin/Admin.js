@@ -51,7 +51,6 @@ const Admin = () => {
                 </div>
             </div>
             <div className="showIcon" onClick={handleSideBar}>
-
                 {
                     sideBarHide ?
                         <div className="icon-container"><FontAwesomeIcon className="" icon={faChevronRight} /></div>

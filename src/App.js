@@ -24,21 +24,33 @@ function App() {
       <userContext.Provider value={[loggedInUser, setLoggedInUser]}>
         <historyContext.Provider value={[currComp, setCurrComp]}>
           <Router>
-            <Header></Header>
-            <Switch>
-              <Route path='/home'>
-                <Home></Home>
-              </Route>
-              <Route path='/login'>
-                <Login></Login>
-              </Route>
-              <Privateroute path='/admin'>
-                <Admin></Admin>
-              </Privateroute>
-              <Privateroute path='/orders'>
-                <Orders></Orders>
-              </Privateroute>
-            </Switch>
+            <div className="fixed">
+              <Header></Header>
+            </div>
+            <div className="down-header">
+            </div>
+            <div className="main-content">
+              <Switch>
+                <Route path='/home'>
+                  <Home></Home>
+                </Route>
+                <Route exact path="/">
+                  <Home></Home>
+                </Route>
+                <Route path='/login'>
+                  <Login></Login>
+                </Route>
+                <Privateroute path='/admin'>
+                  <Admin></Admin>
+                </Privateroute>
+                <Privateroute path='/orders'>
+                  <Orders></Orders>
+                </Privateroute>
+                <Route path="/*">
+                  <Home></Home>
+                </Route>
+              </Switch>
+            </div>
           </Router>
         </historyContext.Provider>
       </userContext.Provider>
