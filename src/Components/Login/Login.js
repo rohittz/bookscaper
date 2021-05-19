@@ -10,6 +10,10 @@ import userIcon from '../../images/peopleicon.png'
 initializeFirebaseApp();
 let isPassValid = false;
 let isEmailValid = false;
+var admin = require('firebase-admin');
+const saveLoggedInUser = () => {
+
+}
 const Login = () => {
     //handle currcomp
     const [currComp, setCurrComp] = useContext(historyContext);

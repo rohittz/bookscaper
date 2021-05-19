@@ -1,0 +1,23 @@
+.payment-tab {
+    width: 350px;
+    padding: 40px 20px;
+    border-radius: 10px;
+    animation-name: tab;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    height: 400px;
+    transform-origin: 50% 50%;
+    background-color: rgba(255, 255, 255, 1);
+    position: fixed;
+    display: none;
+}
+
+@keyframes tab {
+    0% {
+        transform: scale(0.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

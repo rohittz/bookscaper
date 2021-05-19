@@ -11,6 +11,14 @@ export const initializeFirebaseApp = () => {
         firebase.app();
     }
 };
+const getIdToken = () => {
+    firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function (idToken) {
+        sessionStorage.setItem('token', idToken);
+    }).catch(function (error) {
+        // Handle error
+    });
+
+}
 export const handleGoogleSignIn = () => {
     const providerGoogle = new firebase.auth.GoogleAuthProvider();
     return firebase.auth()
@@ -23,6 +31,7 @@ export const handleGoogleSignIn = () => {
                 email: email,
                 photo: photoURL
             }
+            getIdToken();
             return signedUser;
         }).catch((error) => {
             const { code, message } = error;
@@ -58,6 +67,7 @@ export const handleCreateAccount = (user) => {
                 console.log(user.name);
                 updateName(user.name);
                 signedUser.name = user.name;
+                getIdToken();
                 return signedUser;
             })
             .catch((error) => {
@@ -79,6 +89,7 @@ export const handleEmailSignIn = (user) => {
                 const signedUser = { ...user };
                 signedUser.name = userCredential.user.displayName;
                 signedUser.isSignedIn = true;
+                getIdToken();
                 return signedUser;
             })
             .catch((error) => {
